@@ -1,4 +1,4 @@
-# Pattern-Recognition
+# ML Algorithms
 # Kmeans using variance :
 # K-means Clustering with Variance
 
