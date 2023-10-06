@@ -364,6 +364,91 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 This project is licensed under the MIT License. You can find more information in the [LICENSE](LICENSE) file.
 
+# LDA Algorithm :
+# Linear Discriminant Analysis (LDA) README
+
+This repository contains an implementation of Linear Discriminant Analysis (LDA) using numpy. LDA is a dimensionality reduction technique commonly used in machine learning and pattern recognition.
+
+## Getting Started
+
+### Prerequisites
+
+To run the code in this repository, you need to have the following dependencies installed:
+
+- numpy
+
+### Installation
+
+1. Clone the repository:
+
+   ```
+   git clone <repository_url>
+   ```
+
+2. Install the dependencies:
+
+   ```
+   pip install numpy
+   ```
+
+### Usage
+
+1. Import the required libraries:
+
+   ```python
+   import numpy as np
+   ```
+
+2. Create a sample dataset:
+
+   ```python
+   X = np.array([
+       [1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 10]
+   ])
+
+   y = np.array([0, 1, 0]) # Class labels for each sample in X
+   ```
+
+3. Initialize the LDA model with the desired number of discriminants:
+
+   ```python
+   from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+
+   lda = LinearDiscriminantAnalysis(n_components=1)
+   ```
+
+4. Fit the data and transform it using LDA:
+
+   ```python
+   X_lda = lda.fit_transform(X, y)
+   ```
+
+5. Print the original data and transformed data:
+
+   ```python
+   print("Original Data:")
+   print(X)
+
+   print("\nTransformed Data using LDA:")
+   print(X_lda)
+   ```
+
+## Contributing
+
+Contributions to this repository are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Feel free to modify and use this code according to your needs.
+
+## Acknowledgments
+
+- [Scikit-learn](https://scikit-learn.org/) - The machine learning library used for the LDA implementation.
+
 
 
 
