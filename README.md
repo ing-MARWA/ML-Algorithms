@@ -112,4 +112,117 @@ The code outputs the original data and the predicted cluster labels using K-mean
 
 Please note that the code provided is a simplified example and may need modifications for your specific use case.
 
+# Kmeans using mean :
+# K-Means Clustering
+
+This repository contains an implementation of the K-Means clustering algorithm in Python. The code allows you to cluster data points into a specified number of clusters using the K-Means algorithm.
+
+## Usage
+
+To use this code, follow the instructions below:
+
+1. Install the required dependencies by running the following command:
+
+   ```
+   pip install numpy sklearn
+   ```
+
+2. Import the necessary libraries:
+
+   ```python
+   import numpy as np
+   from sklearn.cluster import KMeans
+   ```
+
+3. Create a sample dataset:
+
+   ```python
+   X = np.array([
+       [1, 2],
+       [1.5, 1.8],
+       [5, 8],
+       [8, 8],
+       [1, 0.6],
+       [9, 11]
+   ])
+   ```
+
+4. Initialize the K-Means model with the desired number of clusters:
+
+   ```python
+   kmeans = KMeans(n_clusters=2)
+   ```
+
+5. Fit the data and predict the cluster labels:
+
+   ```python
+   kmeans.fit(X)
+   y_pred = kmeans.predict(X)
+   ```
+
+6. Print the original data and the predicted cluster labels:
+
+   ```python
+   print("Original Data:")
+   print(X)
+
+   print("\nPredicted Cluster Labels using K-means:")
+   print(y_pred)
+   ```
+
+## Custom Implementation
+
+If you prefer to use a custom implementation of the K-Means algorithm, you can use the provided functions `euclidean_distance`, `assign_clusters`, `update_centroids`, and `kmeans`.
+
+Here is an example of how to use the custom implementation:
+
+```python
+import random
+
+def euclidean_distance(a, b):
+    # Function code here...
+
+def assign_clusters(data, centroids):
+    # Function code here...
+
+def update_centroids(clusters):
+    # Function code here...
+
+def kmeans(data, k, max_iterations=100):
+    # Function code here...
+
+# Example data
+data = [
+    (1, 1),
+    (1, 2),
+    (2, 1),
+    (2, 2),
+    (8, 8),
+    (8, 9),
+    (9, 8),
+    (9, 9),
+]
+
+# Run K-means algorithm
+k = 2
+centroids, clusters = kmeans(data, k)
+
+# Print results
+print("Centroids:", centroids)
+print("Clusters:", clusters)
+```
+
+Feel free to modify the code to suit your needs and integrate it into your own projects.
+
+## License
+
+This code is licensed under the MIT License. You can find more information in the [LICENSE](LICENSE) file.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
+
+## Acknowledgements
+
+This code was inspired by the K-Means implementation in the scikit-learn library.
 
