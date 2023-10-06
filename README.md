@@ -110,7 +110,6 @@ The `kmeans_variance` function takes a dataset (`data`) and the number of cluste
 
 The code outputs the original data and the predicted cluster labels using K-means with variance. It also displays the clustered data and the sum of squared error (SSE) for the custom `kmeans_variance` function.
 
-Please note that the code provided is a simplified example and may need modifications for your specific use case.
 
 # Kmeans using mean :
 # K-Means Clustering
@@ -301,5 +300,70 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 This implementation was inspired by the K-means algorithm and the concept of calculating distances using the median.
 
-That's it! You can customize this README file to include more information about your project, such as its purpose, features, and any additional instructions for users.
+# KNN Algorithm :
+# K-Nearest Neighbors (KNN) Algorithm
+
+This repository contains an implementation of the K-Nearest Neighbors (KNN) algorithm in Python. KNN is a simple yet powerful algorithm used for classification and regression tasks. It works by finding the k nearest neighbors to a given test instance and predicts its class based on the majority class of those neighbors.
+
+## Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Example](#example)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+To use the KNN algorithm, you need to have Python installed on your system. You also need to have the NumPy library installed. If you don't have NumPy installed, you can install it using the following command:
+
+```
+pip install numpy
+```
+
+## Usage
+
+To use the KNN algorithm, you need to perform the following steps:
+
+1. Import the `KNN` class from the `knn.py` file.
+2. Create an instance of the `KNN` class with the desired value of `k`.
+3. Train the model by calling the `fit` method and passing in the training data and labels.
+4. Make predictions on new data by calling the `predict` method and passing in the test data.
+
+Here is an example usage:
+
+```python
+from knn import KNN
+import numpy as np
+
+# Create a KNN object with k=3
+knn = KNN(k=3)
+
+# Train on some data
+X_train = np.array([[1, 2], [1.5, 1.8], [5, 8], [8, 8], [1, 0.6], [9, 11]])
+y_train = ['red', 'red', 'blue', 'blue', 'red', 'blue']
+
+knn.fit(X_train, y_train)
+
+# Make predictions on new data
+X_test = np.array([[1, 4], [2.5, 2.8], [3, 6], [7, 8], [0, 0.6]])
+y_pred = knn.predict(X_test)
+
+print(y_pred)  # Output: ['red', 'red', 'red', 'blue', 'red']
+```
+
+## Example
+
+In the `example.py` file, you will find an example usage of the KNN algorithm using a sample dataset. The dataset consists of 10 instances, each with 2 features and a class label. The example demonstrates how to train the model on the training data and make predictions on a test instance.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvement, please create a new issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. You can find more information in the [LICENSE](LICENSE) file.
+
+
+
 
