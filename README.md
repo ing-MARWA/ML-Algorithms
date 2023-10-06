@@ -449,6 +449,95 @@ Feel free to modify and use this code according to your needs.
 
 - [Scikit-learn](https://scikit-learn.org/) - The machine learning library used for the LDA implementation.
 
+# PCA Algorithm :
+Sure! Here's a sample README file that you can use for your GitHub repository:
 
+# PCA (Principal Component Analysis)
 
+This repository contains an implementation of Principal Component Analysis (PCA) in Python. PCA is a dimensionality reduction technique that is commonly used in machine learning and data analysis to reduce the number of features in a dataset while preserving the most important information.
 
+## Installation
+
+To use this code, you will need to have Python 3.x installed on your system. You can install the required dependencies by running the following command:
+
+```
+pip install numpy
+```
+
+## Usage
+
+To use the PCA implementation, follow these steps:
+
+1. Import the necessary libraries:
+
+```python
+import numpy as np
+from sklearn.decomposition import PCA
+```
+
+2. Create a sample dataset:
+
+```python
+X = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+```
+
+3. Initialize the PCA model with the desired number of principal components:
+
+```python
+pca = PCA(n_components=2)
+```
+
+4. Fit and transform the data:
+
+```python
+pca.fit(X)
+X_pca = pca.transform(X)
+```
+
+5. Print the original data and the transformed data:
+
+```python
+print("Original Data:")
+print(X)
+
+print("\nTransformed Data using PCA:")
+print(X_pca)
+```
+
+6. Run the code and observe the results.
+
+## Additional Functions
+
+This repository also includes additional functions that are commonly used in PCA:
+
+- `standardize_data(X)`: Standardizes the input data by subtracting the mean and dividing by the standard deviation.
+
+- `compute_covariance_matrix(X)`: Computes the covariance matrix of the standardized data.
+
+- `compute_eigenvectors_and_eigenvalues(cov_matrix)`: Computes the eigenvectors and eigenvalues of the covariance matrix.
+
+- `sort_eigenvectors_by_eigenvalues(eigenvalues, eigenvectors)`: Sorts the eigenvectors in descending order based on the eigenvalues.
+
+- `pca(X, n_components)`: Applies PCA to the input data and returns the transformed data with the desired number of principal components.
+
+## Example
+
+To demonstrate the usage of the PCA implementation, a sample dataset is provided in the code. The dataset is then reduced to 2 dimensions using PCA, and the transformed data is printed.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use and modify the code for your own purposes.
+
+## Contributing
+
+If you have any suggestions or improvements for this code, please feel free to open an issue or submit a pull request.
+
+## Acknowledgements
+
+- The code in this repository is based on the PCA implementation in scikit-learn library.
+
+- The sample dataset used in the example is generated using NumPy.
