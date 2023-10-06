@@ -226,3 +226,80 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 This code was inspired by the K-Means implementation in the scikit-learn library.
 
+# Kmeans using median :
+# K-means Clustering with Median
+
+This repository contains an implementation of K-means clustering with a custom function for calculating distances using the median. It provides an alternative approach to the traditional K-means algorithm.
+
+## Installation
+
+To use this code, you need to have Python installed. You can clone this repository using the following command:
+
+```
+git clone https://github.com/your-username/your-repository.git
+```
+
+## Usage
+
+The code is written in Python and requires the following dependencies:
+
+- numpy
+- sklearn
+
+You can install these dependencies using pip:
+
+```
+pip install numpy sklearn
+```
+
+To run the code, you can simply execute the `kmeans_median.py` file. Here's an example of how to use the code:
+
+```python
+import random
+
+def kmeans_median(data, k):
+  # Initialize centroids randomly
+  centroids = random.sample(list(data), k)
+  while True:
+    clusters = [[] for _ in range(k)]
+    # Assign each data point to the closest centroid
+    for point in data:
+      distances = [abs(point - c) for c in centroids]
+      closest_centroid_idx = distances.index(min(distances))
+      clusters[closest_centroid_idx].append(point)
+    # Update centroids as the median of their respective cluster
+    new_centroids = []
+    for i, cluster in enumerate(clusters):
+      if not cluster:
+        new_centroids.append(centroids[i])
+        continue
+      new_centroids.append(int(sum(cluster)/len(cluster)))
+    if new_centroids == centroids:
+      break
+    centroids = new_centroids
+  return clusters
+
+# Example usage
+data_points = [1, 2, 3, 10, 11, 12]
+k_clusters = kmeans_median(data_points, 2)
+print("Clustered Data:")
+for i,c in enumerate(k_clusters):
+  print(f"Cluster {i}: {c}")
+```
+
+Make sure to replace `data_points` with your own data and adjust the value of `k_clusters` according to your needs.
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/your-username/your-repository/blob/master/LICENSE) file for more details.
+
+## Acknowledgements
+
+This implementation was inspired by the K-means algorithm and the concept of calculating distances using the median.
+
+That's it! You can customize this README file to include more information about your project, such as its purpose, features, and any additional instructions for users.
+
